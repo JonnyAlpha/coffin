@@ -16,6 +16,7 @@
 import webiopi # Import webiopi - software to communicate with a Rapsberry Pi over a web interface
 from webiopi.devices.serial import Serial 
 from time import sleep
+import gpiozero
 import os
 
 # configure the serial communications port (you may need to change this based on your port name / number
@@ -37,7 +38,7 @@ def stop():
         
 #@webiopi.macro
 def forward():
-        number = 1
+        # number = 1
         serial.writeString("M1: -1023\r\n") # half speed
         serial.writeString("M2: -1023\r\n")
         print("M1 and M2 forward") # print to terminal for debugging
@@ -45,7 +46,7 @@ def forward():
         
 #@webiopi.macro
 def left():
-        number = 2
+        # number = 2
         serial.writeString("M1: -1023\r\n") # motor 1 forward full speed
         serial.writeString("M2: 1023\r\n") # motor 2 reverse full speed
         print("M1 forward and M2 reverse") # print to terminal for debugging
@@ -53,7 +54,7 @@ def left():
         
 #@webiopi.macro
 def right():
-        number = 3
+        # number = 3
         serial.writeString("M1: 1023\r\n") # motor 1 reverse half speed
         serial.writeString("M2: -1023\r\n") # motor 2 forward half speed
         print("M1 reverse and M2 forward") # print to terminal for debugging
@@ -61,7 +62,7 @@ def right():
         
 #@webiopi.macro
 def backward():
-        number = 4
+        # number = 4
         serial.writeString("M1: 1023\r\n") # motor 1 reverse half speed
         serial.writeString("M2: 1023\r\n") # motor 2 reverse half speed
         print("M1 and M2 reverse") # print to terminal for debugging
@@ -69,27 +70,28 @@ def backward():
 
 #@webiopi.macro
 def servo_centre():
-        number = 5
+        # number = 5
         print("servo centre") #print to terminal for debugging
         sleep(1)
 
 #@webiopi.macro
 def servo_left():
-        number = 6
+        # number = 6
         print("servo left") #print to terminal for debugging
         sleep(1)
 
 #@webiopi.macro
 def servo_right():
-        number = 7
+        # number = 7
         print("servo right") #print to terminal for debugging
         sleep(1)        
         
 #@webiopi.macro
 def led_on():
-   number = 8
-   print("LED on if fitted") #print to terminal for debugging
-   sleep(1)
+        #number = 8
+        print("LED on if fitted") #print to terminal for debugging
+        led.on()
+        sleep(1)
    
 #@webiopi.macro
 def led_off():
