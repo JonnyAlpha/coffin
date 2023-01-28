@@ -1,5 +1,5 @@
 # COFFIN
-COFFIN (Computerised Online Fact Finding Investigation Node) started out as a robot designed for a school project to imitate 
+COFFIN (**C**omputerised **On** **l**ine **F**act **F**inding **I**nvestigation **N**ode) started out as a robot designed for a school project to imitate 
 a planetary rover for a space exploration based computing topic.
 This is a Raspberry Pi based robot that is operated from a web based control panel.
 Web control is facilitated using WEBIOPI: http://webiopi.trouch.com/
